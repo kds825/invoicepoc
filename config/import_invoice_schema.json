@@ -1,0 +1,39 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "invoice_no": { "type": ["string", "null"] },
+      "invoice_date": {
+        "type": ["string", "null"],
+        "description": "Prefer ISO-8601 (YYYY-MM-DD) if present"
+      },
+      "seller_name": { "type": ["string", "null"] },
+      "buyer_name": { "type": ["string", "null"] },
+      "currency": { "type": ["string", "null"] },
+      "total_amount": { "type": ["number", "null"] },
+      "incoterms": { "type": ["string", "null"] },
+      "payment_terms": { "type": ["string", "null"] },
+      "country_of_origin": { "type": ["string", "null"] },
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "line_no": { "type": ["integer", "null"] },
+            "description": { "type": ["string", "null"] },
+            "material_code": { 
+              "type": ["string", "null"], 
+              "description": "고객 품번 (문서상의 'Customer part number' 영역에 있는 숫자를 추출" },
+            "customer_po": { "type": ["string", "null"], "description": "발주서 번호 (Customer P.O.)" },
+            "hs_code": { "type": ["string", "null"] },
+            "quantity": { "type": ["number", "null"] },
+            "uom": { "type": ["string", "null"] },
+            "unit_price": { "type": ["number", "null"] },
+            "amount": { "type": ["number", "null"] }
+          }
+        }
+      }
+    },
+    "required": ["invoice_no", "invoice_date"]
+  }

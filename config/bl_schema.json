@@ -1,0 +1,41 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "carrier": { "type": ["string", "null"] },
+      "bl_no": { "type": ["string", "null"] },
+      "bl_type": {
+        "type": ["string", "null"],
+        "enum": ["MASTER", "HOUSE", "UNKNOWN", null],
+        "description": "If identifiable, classify the B/L number type."
+      },
+      "port_of_loading": { "type": ["string", "null"] },
+      "port_of_discharge": { "type": ["string", "null"] },
+      "packing": {
+        "type": ["object", "null"],
+        "additionalProperties": false,
+        "properties": {
+          "containers_of_pkgs": { "type": ["string", "null"] },
+          "gross_weight": { "type": ["string", "null"] },
+          "measurement": { "type": ["string", "null"] },
+          "package_count": { "type": ["number", "null"] },
+          "container_count": { "type": ["number", "null"] },
+          "gross_weight_kg": { "type": ["number", "null"] },
+          "measurement_cbm": { "type": ["number", "null"] }
+        }
+      },
+      "onboard_date": {
+        "type": ["string", "null"],
+        "description": "Shipped on board / On board date. Prefer ISO-8601 (YYYY-MM-DD) if present"
+      },
+      "issue_date": {
+        "type": ["string", "null"],
+        "description": "Date of issue. Prefer ISO-8601 (YYYY-MM-DD) if present"
+      },
+      "shipment_date": {
+        "type": ["string", "null"],
+        "description": "Legacy filed. If only one shipment-related date exists, place it here; otherwise use onboard_date/issue_date."
+      }
+    },
+    "required": ["bl_no", "carrier"]
+  }
