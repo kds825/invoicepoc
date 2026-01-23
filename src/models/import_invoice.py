@@ -16,6 +16,7 @@ class ImportInvoiceItem(BaseModel):
 class ImportInvoice(BaseModel):
     invoice_no: Optional[str] = None
     invoice_date: Optional[str] = None
+    ti_part_number: Optional[str] = None
     seller_name: Optional[str] = None
     buyer_name: Optional[str] = None
     currency: Optional[str] = None

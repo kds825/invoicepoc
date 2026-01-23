@@ -22,9 +22,12 @@
           "properties": {
             "line_no": { "type": ["integer", "null"] },
             "description": { "type": ["string", "null"] },
+            "ti_part_number": {                      
+              "type": ["string", "null"],
+              "description": "TI part number (예: LM... 형태). 문서의 'TI part number' 값"},
             "material_code": { 
               "type": ["string", "null"], 
-              "description": "고객 품번 (문서상의 'Customer part number' 영역에 있는 숫자를 추출" },
+              "description": "고객 품번 문서상의 'Customer part number' 영역에 있는 숫자를 추출" },
             "customer_po": { "type": ["string", "null"], "description": "발주서 번호 (Customer P.O.)" },
             "hs_code": { "type": ["string", "null"] },
             "quantity": { "type": ["number", "null"] },
